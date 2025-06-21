@@ -2,6 +2,9 @@
 
 :root {
   --border-radius: 12px;
+  --font-eb-garamond: 'EB Garamond', serif;
+  --font-eb-garamond-italic: 'EB Garamond', serif;
+  --font-fira-sans: 'Fira Sans', sans-serif;
 }
 
 * {
@@ -13,4 +16,44 @@
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* Fonts */
+.font-eb-garamond {
+  font-family: var(--font-eb-garamond);
+}
+
+.font-eb-garamond-italic {
+  font-family: var(--font-eb-garamond-italic);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-fira-sans {
+  font-family: var(--font-fira-sans);
+}
+
+.font-fira-sans-light {
+  font-family: var(--font-fira-sans);
+  font-weight: 300;
+}
+
+.font-fira-sans-regular {
+  font-family: var(--font-fira-sans);
+  font-weight: 400;
+}
+
+.font-fira-sans-medium {
+  font-family: var(--font-fira-sans);
+  font-weight: 500;
+}
+
+.font-fira-sans-semibold {
+  font-family: var(--font-fira-sans);
+  font-weight: 600;
+}
+
+.font-fira-sans-bold {
+  font-family: var(--font-fira-sans);
+  font-weight: 700;
 }
