@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { EB_Garamond, Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
   subsets: ["latin"],
+  weight: ["400", "600"],
 });
 
 const firaSans = Fira_Sans({
@@ -49,6 +51,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
