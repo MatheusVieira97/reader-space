@@ -1,24 +1,11 @@
 import ArticleCard from '@/components/ArticleCard';
 import TagCard from '@/components/TagCard';
-
-interface Article {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  tag: string;
-  image_url: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-}
+import { Article } from '@/types/Article';
 
 export default async function Home() {
-  const response = await fetch(
-    `https://space-reader-api-sc26w.ondigitalocean.app/api/articles?limit=3`
-  );
-  const articlesData = await response.json();
-  const articles: Article[] = articlesData.data;
+  const response = await fetch(`${process.env.API_URL}/api/articles?limit=3`);
+  const fetchedArticles = await response.json();
+  const articles: Article[] = fetchedArticles.data;
 
   const tags = [
     {
