@@ -55,32 +55,46 @@ export default function Header() {
               <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50">
                 <div className="py-1">
                   <Link
-                    href="/categories/fiction"
+                    href="/categories/classics"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
-                    Fiction
+                    <div className="font-medium">Classics</div>
                   </Link>
                   <Link
-                    href="/categories/non-fiction"
+                    href="/categories/fantasy"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
-                    Non-Fiction
+                    <div className="font-medium">Fantasy</div>
                   </Link>
                   <Link
-                    href="/categories/science"
+                    href="/categories/mystery"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
-                    Science
+                    <div className="font-medium">Mystery</div>
                   </Link>
                   <Link
-                    href="/categories/history"
+                    href="/categories/nonfiction"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
-                    History
+                    <div className="font-medium">Non-Fiction</div>
+                  </Link>
+                  <Link
+                    href="/categories/romance"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={closeCategories}
+                  >
+                    <div className="font-medium">Romance</div>
+                  </Link>
+                  <Link
+                    href="/categories/scifi"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={closeCategories}
+                  >
+                    <div className="font-medium">Sci-Fi</div>
                   </Link>
                 </div>
               </div>
@@ -194,32 +208,46 @@ export default function Header() {
                 {isCategoriesOpen && (
                   <div className="ml-4 space-y-1">
                     <Link
-                      href="/categories/fiction"
+                      href="/categories/classics"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
-                      Fiction
+                      Classics
                     </Link>
                     <Link
-                      href="/categories/non-fiction"
+                      href="/categories/fantasy"
+                      className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
+                      onClick={closeMobileMenu}
+                    >
+                      Fantasy
+                    </Link>
+                    <Link
+                      href="/categories/mystery"
+                      className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
+                      onClick={closeMobileMenu}
+                    >
+                      Mystery
+                    </Link>
+                    <Link
+                      href="/categories/nonfiction"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Non-Fiction
                     </Link>
                     <Link
-                      href="/categories/science"
+                      href="/categories/romance"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
-                      Science
+                      Romance
                     </Link>
                     <Link
-                      href="/categories/history"
+                      href="/categories/scifi"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
-                      History
+                      Sci-Fi
                     </Link>
                   </div>
                 )}
