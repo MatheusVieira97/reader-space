@@ -1,74 +1,63 @@
 import ArticleCard from "@/components/ArticleCard";
 import TagCard from "@/components/TagCard";
 
-export default function Home() {
-  const articles = [
-    {
-      tag: "Health",
-      title: "The perfect place that helps you get work done in peace",
-      author: "Sora Blogging Tips",
-      date: "February 25, 2023",
-      imageUrl:
-        "https://plus.unsplash.com/premium_photo-1665329006421-4e945f91885f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      tag: "Health",
-      title: "Being unique is better than being perfect",
-      author: "Sora Blogging Tips",
-      date: "March 17, 2017",
-      imageUrl:
-        "https://images.unsplash.com/photo-1565895405138-6c3a1555da6a?q=80&w=2835&auto=format&fit=crop",
-    },
-    {
-      tag: "Lifestyle",
-      title: "I always loved aesthetics",
-      author: "Sora Blogging Tips",
-      date: "March 18, 2017",
-      imageUrl:
-        "https://plus.unsplash.com/premium_photo-1663056025073-a9c4344f8e75?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+interface Article {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  tag: string;
+  image_url: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
 
+export default async function Home() {
+  const response = await fetch(`https://space-reader-api-sc26w.ondigitalocean.app/api/articles?limit=3`);
+  const articlesData = await response.json();
+  const articles: Article[] = articlesData.data;
+  
   const tags = [
     {
-      name: "Health",
+      name: "Classics",
       imageUrl:
-        "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2940&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2940&auto=format&fit=crop",
     },
     {
-      name: "Food",
+      name: "Fantasy",
       imageUrl:
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2940&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=684&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      name: "Breakfast",
+      name: "Mystery",
       imageUrl:
-        "https://plus.unsplash.com/premium_photo-1672363353897-ae5a81a1ab57?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1705769942043-5e109e0234b1?q=80&w=1516&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      name: "Snacks",
+      name: "Non-Fiction",
       imageUrl:
-        "https://plus.unsplash.com/premium_photo-1687014520257-3b09f6668092?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2940&auto=format&fit=crop",
     },
     {
-      name: "Lifestyle",
+      name: "Romance",
       imageUrl:
-        "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2940&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1550155891-1ab2d265d9c3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      name: "Chocolate",
+      name: "Sci-Fi",
       imageUrl:
-        "https://images.unsplash.com/photo-1610450949065-1f2841536c88?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1682124752476-40db22034a58?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
   return (
     <main className="mx-[7%] md:mx-[5%] lg:mx-[3%]">
       <section className="flex flex-col gap-4 justify-center items-center">
-        <h2 className="text-center mt-8 font-fira-sans text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl px-4">
+        <h2 className="text-center mt-8 font-fira-sans italic text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl px-4">
           Thoughts, stories and ideas by the Reader Space
         </h2>
-        <p className="text-center my-6  font-fira-sans text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl px-4 max-w-4xl">
+        <p className="text-center mb-6  font-fira-sans text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl px-4 max-w-4xl">
           Reader Space is a minimal theme for your reading journey. A beautiful
           way to share stories with your growing audience.
         </p>
@@ -91,8 +80,8 @@ export default function Home() {
               tag={article.tag}
               title={article.title}
               author={article.author}
-              date={article.date}
-              imageUrl={article.imageUrl}
+              date={article.published_at}
+              imageUrl={article.image_url}
             />
         ))}
       </section>
