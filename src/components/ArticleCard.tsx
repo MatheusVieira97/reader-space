@@ -27,11 +27,19 @@ export default function ArticleCard({
         <span className="text-white text-xs sm:text-sm md:text-base font-bold mb-2 bg-gray-400/50 px-2 py-1 rounded-full w-fit">
           {tag}
         </span>
-        <h3 className="text-white text-sm sm:text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold mb-2 leading-tight">{title}</h3>
+        <h3 className="text-white text-sm sm:text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold mb-2 leading-tight">
+          {title}
+        </h3>
         <div className="text-white text-xs sm:text-sm md:text-md lg:text-md xl:text-md 2xl:text-md font-bold">
           <span>by {author}</span>
           <span> • </span>
-            <span>{new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          <span>
+            {new Date(date).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </span>
         </div>
       </div>
     </article>

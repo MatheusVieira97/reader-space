@@ -1,12 +1,20 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import { useDropdown } from "../hooks/useDropdown";
+import React from 'react';
+import Link from 'next/link';
+import { useDropdown } from '../hooks/useDropdown';
 
 export default function Header() {
-  const { isOpen: isCategoriesOpen, toggle: toggleCategories, close: closeCategories } = useDropdown();
-  const { isOpen: isMobileMenuOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useDropdown();
+  const {
+    isOpen: isCategoriesOpen,
+    toggle: toggleCategories,
+    close: closeCategories,
+  } = useDropdown();
+  const {
+    isOpen: isMobileMenuOpen,
+    toggle: toggleMobileMenu,
+    close: closeMobileMenu,
+  } = useDropdown();
 
   return (
     <header
@@ -32,7 +40,7 @@ export default function Header() {
           >
             Home
           </Link>
-          
+
           <div className="relative">
             <button
               onClick={toggleCategories}
@@ -47,10 +55,15 @@ export default function Header() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
-            
+
             {isCategoriesOpen && (
               <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50">
                 <div className="py-1">
@@ -100,7 +113,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          
+
           <Link
             href="/contact"
             className="text-gray-700 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
@@ -124,7 +137,12 @@ export default function Header() {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
           </svg>
         </div>
       </div>
@@ -135,16 +153,27 @@ export default function Header() {
         aria-label="Toggle mobile menu"
         aria-expanded={isMobileMenuOpen}
       >
-        <span className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+        <span
+          className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+        ></span>
+        <span
+          className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}
+        ></span>
+        <span
+          className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+        ></span>
       </button>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40" onClick={closeMobileMenu}></div>
+        <div
+          className="md:hidden fixed inset-0 z-40"
+          onClick={closeMobileMenu}
+        ></div>
       )}
 
-      <div className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div
+        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
         <div className="flex flex-col h-full">
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
@@ -153,8 +182,18 @@ export default function Header() {
               className="p-2 hover:bg-gray-100 rounded-md transition-colors"
               aria-label="Close mobile menu"
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -173,7 +212,12 @@ export default function Header() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
             </div>
           </div>
@@ -187,7 +231,7 @@ export default function Header() {
               >
                 Home
               </Link>
-              
+
               <div className="space-y-2">
                 <button
                   onClick={toggleCategories}
@@ -201,10 +245,15 @@ export default function Header() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
-                
+
                 {isCategoriesOpen && (
                   <div className="ml-4 space-y-1">
                     <Link
@@ -252,7 +301,7 @@ export default function Header() {
                   </div>
                 )}
               </div>
-              
+
               <Link
                 href="/contact"
                 className="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-base font-medium"

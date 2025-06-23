@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --border-radius: 12px;
@@ -7,7 +7,8 @@
   --font-fira-sans: 'Fira Sans', sans-serif;
 }
 
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
