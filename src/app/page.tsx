@@ -19,6 +19,7 @@ export default async function Home(): Promise<JSX.Element> {
   );
   const fetchedArticles: ApiResponse = await response.json();
   const articles: Article[] = fetchedArticles.data;
+  console.log('main page articles', articles);
 
   const tags: Tag[] = [
     {
