@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const id = parseInt(idMatch[1]);
 
   try {
-    const response = await fetch(`http://localhost:3000/api/articles/${id}`);
+    const response = await fetch(`${process.env.API_URL}/api/articles/${id}`);
 
     if (!response.ok) {
       notFound();
