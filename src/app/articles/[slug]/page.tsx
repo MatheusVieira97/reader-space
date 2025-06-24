@@ -25,10 +25,12 @@ export async function generateMetadata({
     };
   }
 
-  const id = parseInt(idMatch[1]);
+  const id: number = parseInt(idMatch[1]);
 
   try {
-    const response = await fetch(`${process.env.API_URL}/api/articles/${id}`);
+    const response: Response = await fetch(
+      `${process.env.API_URL}/api/articles/${id}`
+    );
 
     if (!response.ok) {
       return {
@@ -37,10 +39,10 @@ export async function generateMetadata({
       };
     }
 
-    const responseData = await response.json();
+    const responseData: { data: Article } = await response.json();
     const article: Article = responseData.data;
 
-    const expectedSlug = generateSlugWithId(article.title, article.id);
+    const expectedSlug: string = generateSlugWithId(article.title, article.id);
     if (slug !== expectedSlug) {
       return {
         title: 'Article Not Found',
@@ -77,24 +79,26 @@ export async function generateMetadata({
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
 
-  const idMatch = slug.match(/-(\d+)$/);
+  const idMatch: RegExpMatchArray | null = slug.match(/-(\d+)$/);
   if (!idMatch) {
     notFound();
   }
 
-  const id = parseInt(idMatch[1]);
+  const id: number = parseInt(idMatch[1]);
 
   try {
-    const response = await fetch(`${process.env.API_URL}/api/articles/${id}`);
+    const response: Response = await fetch(
+      `${process.env.API_URL}/api/articles/${id}`
+    );
 
     if (!response.ok) {
       notFound();
     }
 
-    const responseData = await response.json();
+    const responseData: { data: Article } = await response.json();
     const article: Article = responseData.data;
 
-    const expectedSlug = generateSlugWithId(article.title, article.id);
+    const expectedSlug: string = generateSlugWithId(article.title, article.id);
     if (slug !== expectedSlug) {
       notFound();
     }

@@ -12,7 +12,6 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="font-eb-garamond-semibold text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-4">
             Get in Touch
@@ -24,7 +23,6 @@ export default function ContactPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div className="space-y-8">
             <div>
               <h2 className="font-eb-garamond-semibold text-2xl md:text-3xl text-gray-900 mb-6">
@@ -122,8 +120,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
             <h2 className="font-eb-garamond-semibold text-2xl md:text-3xl text-gray-900 mb-6">
               Send us a Message
@@ -245,8 +241,6 @@ export default function ContactPage() {
             </form>
           </div>
         </div>
-
-        {/* FAQ Section */}
         <div className="mt-16">
           <h2 className="font-eb-garamond-semibold text-3xl md:text-4xl text-gray-900 text-center mb-12">
             Frequently Asked Questions

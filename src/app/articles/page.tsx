@@ -17,20 +17,25 @@ export default async function ArticlesPage({
   searchParams,
 }: ArticlesPageProps) {
   const params = await searchParams;
-  const page = parseInt(params.page || '1');
-  const limit = parseInt(params.limit || '8');
-  const tag = params.tag;
+  const page: number = parseInt(params.page || '1');
+  const limit: number = parseInt(params.limit || '8');
+  const tag: string | undefined = params.tag;
 
-  const apiUrl = new URL(`${process.env.API_URL}/api/articles`);
+  const apiUrl: URL = new URL(`${process.env.API_URL}/api/articles`);
   apiUrl.searchParams.set('page', page.toString());
   apiUrl.searchParams.set('limit', limit.toString());
   if (tag) {
-    const normalizedTag = tag.toLowerCase().replace(/[\s-]/g, '');
+    const normalizedTag: string = tag.toLowerCase().replace(/[\s-]/g, '');
     apiUrl.searchParams.set('tag', normalizedTag);
   }
 
-  const response = await fetch(apiUrl.toString());
-  const fetchedData = await response.json();
+  const response: Response = await fetch(apiUrl.toString());
+  const fetchedData: {
+    data: Article[];
+    page?: number;
+    totalItems?: number;
+    totalPages?: number;
+  } = await response.json();
   const articles: Article[] = fetchedData.data;
 
   const pagination: PaginationInfo = {
@@ -41,7 +46,7 @@ export default async function ArticlesPage({
     hasMore: (fetchedData.page || 1) < (fetchedData.totalPages || 1),
   };
 
-  const searchParamsKey = JSON.stringify({ page, limit, tag });
+  const searchParamsKey: string = JSON.stringify({ page, limit, tag });
 
   return (
     <main className="mx-[7%] md:mx-[5%] lg:mx-[3%]">

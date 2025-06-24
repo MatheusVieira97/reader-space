@@ -2,15 +2,27 @@ import ArticleCard from '@/components/ArticleCard';
 import TagCard from '@/components/TagCard';
 import { Article } from '@/types/Article';
 import Link from 'next/link';
+import { JSX } from 'react';
 
-export default async function Home() {
-  const response = await fetch(`${process.env.API_URL}/api/articles?limit=3`);
-  const fetchedArticles = await response.json();
+interface ApiResponse {
+  data: Article[];
+}
+
+interface Tag {
+  name: string;
+  imageUrl: string;
+}
+
+export default async function Home(): Promise<JSX.Element> {
+  const response: Response = await fetch(
+    `${process.env.API_URL}/api/articles?limit=3`
+  );
+  const fetchedArticles: ApiResponse = await response.json();
   const articles: Article[] = fetchedArticles.data;
 
   // TODO: Create Tags on database and create routes on API
-  // TODO: Get tags from API
-  const tags = [
+  // TODO: Get tags from backend
+  const tags: Tag[] = [
     {
       name: 'Classics',
       imageUrl:
@@ -55,7 +67,6 @@ export default async function Home() {
         </p>
       </section>
 
-      {/* Enhanced Content Section for SEO */}
       <section className="max-w-4xl mx-auto mb-12 px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <article className="space-y-4">
@@ -78,8 +89,8 @@ export default async function Home() {
             <p className="text-gray-700 leading-relaxed">
               Connect with fellow book lovers who share your passion for
               reading. Share your thoughts, discover new authors, and engage in
-              meaningful discussions about literature. Whether you're a casual
-              reader or a literary enthusiast, there's a place for you in our
+              meaningful discussions about literature. Whether you are a casual
+              reader or a literary enthusiast, there is a place for you in our
               growing community of bibliophiles.
             </p>
           </article>
@@ -119,7 +130,6 @@ export default async function Home() {
         ))}
       </section>
 
-      {/* Additional Content Section */}
       <section className="max-w-4xl mx-auto mt-12 px-4">
         <div className="bg-gray-50 rounded-lg p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
