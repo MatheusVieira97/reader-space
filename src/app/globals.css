@@ -58,3 +58,21 @@ body {
   font-family: var(--font-fira-sans);
   font-weight: 700;
 }
+
+/* Article content styling */
+.article-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.article-content br {
+  display: block;
+  content: '';
+  margin-top: 0.5rem;
+}
