@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     'reading, books, library, reading list, personal reading, book organization',
   authors: [{ name: 'Reader Space' }],
   creator: 'Reader Space',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: 'Reader Space - Your Personal Reading Journey',
     description:
