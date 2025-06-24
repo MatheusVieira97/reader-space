@@ -15,7 +15,7 @@ interface Tag {
 
 export default async function Home(): Promise<JSX.Element> {
   const response: Response = await fetch(
-    `${process.env.API_URL}/api/articles?limit=3`
+    `${process.env.API_URL}/api/articles?limit=3&page=1`
   );
   const fetchedArticles: ApiResponse = await response.json();
   const articles: Article[] = fetchedArticles.data;
