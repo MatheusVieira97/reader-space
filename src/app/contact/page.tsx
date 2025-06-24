@@ -6,6 +6,29 @@ export const metadata: Metadata = {
     "Get in touch with the Reader Space team. We'd love to hear from you about your reading journey, feedback, or any questions you might have about our platform.",
   keywords:
     'contact, support, feedback, reader space, reading community, help, customer service',
+  openGraph: {
+    title: 'Contact Us - Reader Space',
+    description:
+      "Get in touch with the Reader Space team. We'd love to hear from you about your reading journey, feedback, or any questions you might have about our platform.",
+    type: 'website',
+    url: 'https://readerspace.com/contact',
+    siteName: 'Reader Space',
+    images: [
+      {
+        url: 'https://readerspace.com/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Reader Space Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us - Reader Space',
+    description:
+      "Get in touch with the Reader Space team. We'd love to hear from you about your reading journey, feedback, or any questions you might have about our platform.",
+    images: ['https://readerspace.com/android-chrome-512x512.png'],
+  },
 };
 
 export default function ContactPage() {

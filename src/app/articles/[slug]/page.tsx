@@ -58,6 +58,8 @@ export async function generateMetadata({
         description: article.content.substring(0, 160) + '...',
         images: [article.image_url],
         type: 'article',
+        url: `https://readerspace.com/articles/${slug}`,
+        siteName: 'Reader Space',
         publishedTime: article.published_at,
         authors: [article.author],
       },
