@@ -1,27 +1,41 @@
 import { Article, ArticlesPageProps, PaginationInfo } from '@/types/Article';
 import { Suspense } from 'react';
 import ArticlesPageWrapper from './components/ArticlesPageWrapper';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'All Articles - Reader Space',
+  description:
+    'Explore our complete collection of articles, book reviews, and literary insights. Discover new authors, genres, and reading recommendations from our community of passionate readers.',
+  keywords:
+    'articles, book reviews, literature, reading recommendations, book blog, literary content, reading community',
+};
 
 export default async function ArticlesPage({
   searchParams,
 }: ArticlesPageProps) {
   const params = await searchParams;
-  const page = parseInt(params.page || '1');
-  const limit = parseInt(params.limit || '8');
-  const tag = params.tag;
+  const page: number = parseInt(params.page || '1');
+  const limit: number = parseInt(params.limit || '8');
+  const tag: string | undefined = params.tag;
 
-  const apiUrl = new URL(`${process.env.API_URL}/api/articles`);
+  const apiUrl: URL = new URL(`${process.env.API_URL}/api/articles`);
   apiUrl.searchParams.set('page', page.toString());
   apiUrl.searchParams.set('limit', limit.toString());
   if (tag) {
-    const normalizedTag = tag.toLowerCase().replace(/[\s-]/g, '');
+    const normalizedTag: string = tag.toLowerCase().replace(/[\s-]/g, '');
     apiUrl.searchParams.set('tag', normalizedTag);
   }
 
-  const response = await fetch(apiUrl.toString());
-  const fetchedData = await response.json();
+  const response: Response = await fetch(apiUrl.toString());
+  const fetchedData: {
+    data: Article[];
+    page?: number;
+    totalItems?: number;
+    totalPages?: number;
+  } = await response.json();
   const articles: Article[] = fetchedData.data;
 
   const pagination: PaginationInfo = {
@@ -32,7 +46,7 @@ export default async function ArticlesPage({
     hasMore: (fetchedData.page || 1) < (fetchedData.totalPages || 1),
   };
 
-  const searchParamsKey = JSON.stringify({ page, limit, tag });
+  const searchParamsKey: string = JSON.stringify({ page, limit, tag });
 
   return (
     <main className="mx-[7%] md:mx-[5%] lg:mx-[3%]">
@@ -45,6 +59,17 @@ export default async function ArticlesPage({
             ? `Explore articles tagged with "${tag}" and discover amazing stories.`
             : 'Explore all our articles and discover amazing stories from our community.'}
         </p>
+        {!tag && (
+          <div className="text-center mb-8 max-w-3xl mx-auto px-4">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Dive into our extensive collection of literary content, from
+              in-depth book reviews and author interviews to reading guides and
+              literary analysis. Our articles are written by passionate readers
+              and literary enthusiasts who share their insights,
+              recommendations, and discoveries to enrich your reading journey.
+            </p>
+          </div>
+        )}
       </section>
 
       <Suspense fallback={<div>Loading articles...</div>}>

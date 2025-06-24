@@ -1,21 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { JSX } from 'react';
 import Link from 'next/link';
 import { useDropdown } from '../hooks/useDropdown';
 
-export default function Header() {
+interface DropdownProps {
+  isOpen: boolean;
+  toggle: () => void;
+  close: () => void;
+  open: () => void;
+}
+
+export default function Header(): JSX.Element {
   const {
     isOpen: isCategoriesOpen,
     toggle: toggleCategories,
     close: closeCategories,
-  } = useDropdown();
+  }: DropdownProps = useDropdown();
   const {
     isOpen: isMobileMenuOpen,
     toggle: toggleMobileMenu,
     close: closeMobileMenu,
-  } = useDropdown();
-
+  }: DropdownProps = useDropdown();
   return (
     <header
       className="flex flex-row justify-between items-center py-4 px-[7%] md:px-[5%] lg:px-20 xl:px-50 2xl:px-92 bg-gray-100 relative"
