@@ -3,8 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us - Reader Space',
   description:
-    "Get in touch with the Reader Space team. We'd love to hear from you about your reading journey.",
-  keywords: 'contact, support, feedback, reader space, reading community',
+    "Get in touch with the Reader Space team. We'd love to hear from you about your reading journey, feedback, or any questions you might have about our platform.",
+  keywords:
+    'contact, support, feedback, reader space, reading community, help, customer service',
 };
 
 export default function ContactPage() {

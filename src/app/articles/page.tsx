@@ -1,8 +1,17 @@
 import { Article, ArticlesPageProps, PaginationInfo } from '@/types/Article';
 import { Suspense } from 'react';
 import ArticlesPageWrapper from './components/ArticlesPageWrapper';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'All Articles - Reader Space',
+  description:
+    'Explore our complete collection of articles, book reviews, and literary insights. Discover new authors, genres, and reading recommendations from our community of passionate readers.',
+  keywords:
+    'articles, book reviews, literature, reading recommendations, book blog, literary content, reading community',
+};
 
 export default async function ArticlesPage({
   searchParams,
@@ -45,6 +54,17 @@ export default async function ArticlesPage({
             ? `Explore articles tagged with "${tag}" and discover amazing stories.`
             : 'Explore all our articles and discover amazing stories from our community.'}
         </p>
+        {!tag && (
+          <div className="text-center mb-8 max-w-3xl mx-auto px-4">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Dive into our extensive collection of literary content, from
+              in-depth book reviews and author interviews to reading guides and
+              literary analysis. Our articles are written by passionate readers
+              and literary enthusiasts who share their insights,
+              recommendations, and discoveries to enrich your reading journey.
+            </p>
+          </div>
+        )}
       </section>
 
       <Suspense fallback={<div>Loading articles...</div>}>

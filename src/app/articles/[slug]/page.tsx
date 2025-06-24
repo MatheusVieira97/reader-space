@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import ReactMarkdown from 'react-markdown';
+import Script from 'next/script';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -98,8 +99,41 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       notFound();
     }
 
+    const articleStructuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.title,
+      description: article.content.substring(0, 160) + '...',
+      image: article.image_url,
+      author: {
+        '@type': 'Person',
+        name: article.author,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Reader Space',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://readerspace.com/favicon.ico',
+        },
+      },
+      datePublished: article.published_at,
+      dateModified: article.published_at,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://readerspace.com/articles/${slug}`,
+      },
+    };
+
     return (
       <main className="mx-[7%] md:mx-[5%] lg:mx-[3%]">
+        <Script
+          id="article-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleStructuredData),
+          }}
+        />
         <article className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 mt-4 leading-tight">
             {article.title}
