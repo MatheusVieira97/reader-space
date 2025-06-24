@@ -37,12 +37,23 @@ export const metadata: Metadata = {
       'Discover and organize your reading journey with Reader Space. Your personal space for books, articles, and reading lists. Join our community of passionate readers and explore curated content.',
     type: 'website',
     locale: 'pt_BR',
+    url: 'https://readerspace.com',
+    siteName: 'Reader Space',
+    images: [
+      {
+        url: 'https://readerspace.com/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Reader Space Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Reader Space - Your Personal Reading Journey',
     description:
       'Discover and organize your reading journey with Reader Space. Your personal space for books, articles, and reading lists.',
+    images: ['https://readerspace.com/android-chrome-512x512.png'],
   },
   robots: {
     index: true,

@@ -11,6 +11,29 @@ export const metadata: Metadata = {
     'Explore our complete collection of articles, book reviews, and literary insights. Discover new authors, genres, and reading recommendations from our community of passionate readers.',
   keywords:
     'articles, book reviews, literature, reading recommendations, book blog, literary content, reading community',
+  openGraph: {
+    title: 'All Articles - Reader Space',
+    description:
+      'Explore our complete collection of articles, book reviews, and literary insights. Discover new authors, genres, and reading recommendations from our community of passionate readers.',
+    type: 'website',
+    url: 'https://readerspace.com/articles',
+    siteName: 'Reader Space',
+    images: [
+      {
+        url: 'https://readerspace.com/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Reader Space Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'All Articles - Reader Space',
+    description:
+      'Explore our complete collection of articles, book reviews, and literary insights. Discover new authors, genres, and reading recommendations from our community of passionate readers.',
+    images: ['https://readerspace.com/android-chrome-512x512.png'],
+  },
 };
 
 export default async function ArticlesPage({
