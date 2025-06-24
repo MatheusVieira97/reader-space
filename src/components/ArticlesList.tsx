@@ -14,11 +14,13 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
       {articles.map((article, index) => (
         <ArticleCard
           key={article.id || index}
+          id={article.id}
           tag={article.tag}
           title={article.title}
           author={article.author}
           date={article.published_at}
           imageUrl={article.image_url}
+          content={article.content}
         />
       ))}
     </section>
