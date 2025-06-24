@@ -56,9 +56,9 @@ export default async function Home(): Promise<JSX.Element> {
   return (
     <main className="mx-[7%] md:mx-[5%] lg:mx-[3%]">
       <section className="flex flex-col gap-4 justify-center items-center">
-        <h1 className="text-center mt-8 font-fira-sans italic text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl px-4">
+        <h2 className="text-center mt-8 font-fira-sans italic text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl px-4">
           Thoughts, stories and ideas by the Reader Space
-        </h1>
+        </h2>
         <p className="text-center mb-6  font-fira-sans text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl px-4 max-w-4xl">
           Reader Space is a minimal theme for your reading journey. A beautiful
           way to share stories with your growing audience.
@@ -68,9 +68,9 @@ export default async function Home(): Promise<JSX.Element> {
       <section className="max-w-4xl mx-auto mb-12 px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <article className="space-y-4">
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h3 className="text-xl font-semibold text-gray-900">
               Discover Your Next Great Read
-            </h2>
+            </h3>
             <p className="text-gray-700 leading-relaxed">
               Explore our carefully curated collection of articles, book
               reviews, and literary insights. From timeless classics to
@@ -127,6 +127,15 @@ export default async function Home(): Promise<JSX.Element> {
           />
         ))}
       </section>
+
+      <div className="flex justify-center mt-8">
+        <Link
+          href="/articles"
+          className="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white text-sm sm:text-base md:text-lg rounded-md hover:bg-gray-800 transition-colors cursor-pointer"
+        >
+          See all articles
+        </Link>
+      </div>
 
       <section className="max-w-4xl mx-auto mt-12 px-4">
         <div className="bg-gray-50 rounded-lg p-8">
@@ -207,15 +216,6 @@ export default async function Home(): Promise<JSX.Element> {
           </div>
         </div>
       </section>
-
-      <div className="flex justify-center mt-8">
-        <Link
-          href="/articles"
-          className="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white text-sm sm:text-base md:text-lg rounded-md hover:bg-gray-800 transition-colors cursor-pointer"
-        >
-          See all articles
-        </Link>
-      </div>
     </main>
   );
 }
