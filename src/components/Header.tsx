@@ -68,42 +68,49 @@ export default function Header() {
               <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50">
                 <div className="py-1">
                   <Link
-                    href="/categories/classics"
+                    href="/articles"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={closeCategories}
+                  >
+                    <div className="font-medium">All</div>
+                  </Link>
+                  <Link
+                    href="/articles?tag=classics"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
                     <div className="font-medium">Classics</div>
                   </Link>
                   <Link
-                    href="/categories/fantasy"
+                    href="/articles?tag=fantasy"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
                     <div className="font-medium">Fantasy</div>
                   </Link>
                   <Link
-                    href="/categories/mystery"
+                    href="/articles?tag=mystery"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
                     <div className="font-medium">Mystery</div>
                   </Link>
                   <Link
-                    href="/categories/nonfiction"
+                    href="/articles?tag=nonfiction"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
                     <div className="font-medium">Non-Fiction</div>
                   </Link>
                   <Link
-                    href="/categories/romance"
+                    href="/articles?tag=romance"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
                     <div className="font-medium">Romance</div>
                   </Link>
                   <Link
-                    href="/categories/scifi"
+                    href="/articles?tag=scifi"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={closeCategories}
                   >
@@ -121,30 +128,6 @@ export default function Header() {
             Contact Us
           </Link>
         </nav>
-      </div>
-
-      <div className="hidden md:flex items-center">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-64 md:w-46 px-4 py-2 pl-10 pr-4 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            aria-label="Search books"
-          />
-          <svg
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div>
       </div>
 
       <button
@@ -198,30 +181,6 @@ export default function Header() {
             </button>
           </div>
 
-          <div className="p-4 border-b border-gray-200">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full px-4 py-2 pl-10 pr-4 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                aria-label="Search books"
-              />
-              <svg
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-          </div>
-
           <nav className="flex-1 p-4">
             <div className="space-y-4">
               <Link
@@ -257,42 +216,49 @@ export default function Header() {
                 {isCategoriesOpen && (
                   <div className="ml-4 space-y-1">
                     <Link
-                      href="/categories/classics"
+                      href="/articles"
+                      className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
+                      onClick={closeMobileMenu}
+                    >
+                      All
+                    </Link>
+                    <Link
+                      href="/articles?tag=classics"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Classics
                     </Link>
                     <Link
-                      href="/categories/fantasy"
+                      href="/articles?tag=fantasy"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Fantasy
                     </Link>
                     <Link
-                      href="/categories/mystery"
+                      href="/articles?tag=mystery"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Mystery
                     </Link>
                     <Link
-                      href="/categories/nonfiction"
+                      href="/articles?tag=nonfiction"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Non-Fiction
                     </Link>
                     <Link
-                      href="/categories/romance"
+                      href="/articles?tag=romance"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
                       Romance
                     </Link>
                     <Link
-                      href="/categories/scifi"
+                      href="/articles?tag=scifi"
                       className="block text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors rounded-md px-3 py-2 text-sm"
                       onClick={closeMobileMenu}
                     >
