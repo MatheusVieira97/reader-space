@@ -20,8 +20,6 @@ export default async function Home(): Promise<JSX.Element> {
   const fetchedArticles: ApiResponse = await response.json();
   const articles: Article[] = fetchedArticles.data;
 
-  // TODO: Create Tags on database and create routes on API
-  // TODO: Get tags from backend
   const tags: Tag[] = [
     {
       name: 'Classics',
@@ -101,7 +99,7 @@ export default async function Home(): Promise<JSX.Element> {
         className="flex flex-row flex-wrap gap-4 justify-center"
         aria-label="Reading Categories"
       >
-        {tags.map((tag, index) => (
+        {tags?.map((tag, index) => (
           <TagCard
             key={tag.name}
             tagName={tag.name}
@@ -115,7 +113,7 @@ export default async function Home(): Promise<JSX.Element> {
         className="flex flex-row flex-wrap gap-4 sm:gap-6 justify-center mt-4"
         aria-label="Recent Articles"
       >
-        {articles.map((article, index) => (
+        {articles?.map((article, index) => (
           <ArticleCard
             key={`${article.id}-${index}`}
             id={article.id}
