@@ -1,8 +1,6 @@
 import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://readerspace.com';
-
   return {
     name: 'Reader Space - Your Personal Reading Journey',
     short_name: 'Reader Space',
