@@ -23,9 +23,9 @@ export default function ArticleCard({
   content,
   priority = false,
 }: ArticleCardProps) {
-  const slug = generateSlugWithId(title, id);
+  const slug: string = generateSlugWithId(title, id);
 
-  const truncatedContent =
+  const truncatedContent: string =
     content?.length > 240 ? `${content.substring(0, 240)}...` : content;
 
   return (
