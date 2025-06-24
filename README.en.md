@@ -13,6 +13,7 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Next.js 15**
 - **React 19**
 - **TypeScript**
@@ -21,6 +22,7 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
 - **React Markdown**
 
 ### Development Tools
+
 - **ESLint**
 - **Prettier**
 - **Jest**
@@ -31,26 +33,29 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm package manager
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone git@github.com:MatheusVieira97/reader-space.git
    cd reader-space
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
    Create a `.env` file in the root directory:
+
    ```env
-   API_URL=http://localhost:3000 
+   API_URL=http://localhost:3000
    ```
 
 4. **Set up and run the backend API**
@@ -58,6 +63,7 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
    **Note**: Make sure the backend is running on the port specified in your `API_URL` environment variable.
 
 5. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -67,17 +73,17 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
 
 ### Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server with Turbopack |
-| `npm run build` | Build the application for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint for code linting |
-| `npm run format` | Format code with Prettier |
-| `npm run format:check` | Check code formatting |
-| `npm run test` | Run test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Run tests with coverage report |
+| Script                  | Description                             |
+| ----------------------- | --------------------------------------- |
+| `npm run dev`           | Start development server with Turbopack |
+| `npm run build`         | Build the application for production    |
+| `npm run start`         | Start production server                 |
+| `npm run lint`          | Run ESLint for code linting             |
+| `npm run format`        | Format code with Prettier               |
+| `npm run format:check`  | Check code formatting                   |
+| `npm run test`          | Run test suite                          |
+| `npm run test:watch`    | Run tests in watch mode                 |
+| `npm run test:coverage` | Run tests with coverage report          |
 
 ### Test Structure
 
@@ -85,15 +91,16 @@ A modern, minimal reading platform. Reader Space is designed for book lovers to 
 - **Hook Tests**: Test custom React hooks
 - **API Tests**: Test API endpoints and data fetching
 
-
 ## 🔧 Configuration
+
 ### Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `API_URL` | Backend API URL | Yes |
+| Variable  | Description     | Required |
+| --------- | --------------- | -------- |
+| `API_URL` | Backend API URL | Yes      |
 
 ### Development Guidelines
+
 - Follow TypeScript best practices
 - Write tests for new features
 - Use conventional commit messages
