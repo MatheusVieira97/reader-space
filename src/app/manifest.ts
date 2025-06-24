@@ -38,7 +38,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
     categories: ['books', 'education', 'lifestyle'],
-    lang: 'pt-BR',
+    lang: 'en',
     scope: '/',
   };
 }

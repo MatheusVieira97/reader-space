@@ -89,7 +89,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head>
         <Script
           id="structured-data"
