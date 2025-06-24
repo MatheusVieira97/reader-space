@@ -56,8 +56,13 @@ export default async function Home() {
         className="flex flex-row flex-wrap gap-4 justify-center"
         aria-label="Tags"
       >
-        {tags.map(tag => (
-          <TagCard key={tag.name} tagName={tag.name} imageUrl={tag.imageUrl} />
+        {tags.map((tag, index) => (
+          <TagCard
+            key={tag.name}
+            tagName={tag.name}
+            imageUrl={tag.imageUrl}
+            priority={index < 3}
+          />
         ))}
       </section>
 
@@ -67,12 +72,15 @@ export default async function Home() {
       >
         {articles.map((article, index) => (
           <ArticleCard
-            key={index}
+            key={`${article.id}-${index}`}
+            id={article.id}
             tag={article.tag}
             title={article.title}
             author={article.author}
             date={article.published_at}
             imageUrl={article.image_url}
+            content={article.content}
+            priority={index === 0}
           />
         ))}
       </section>
