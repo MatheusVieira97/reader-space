@@ -1,6 +1,7 @@
 import ArticleCard from '@/components/ArticleCard';
 import TagCard from '@/components/TagCard';
 import { Article } from '@/types/Article';
+import Link from 'next/link';
 
 export default async function Home() {
   const response = await fetch(`${process.env.API_URL}/api/articles?limit=3`);
@@ -76,9 +77,12 @@ export default async function Home() {
         ))}
       </section>
       <div className="flex justify-center mt-8">
-        <button className="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white text-sm sm:text-base md:text-lg rounded-md hover:bg-gray-800 transition-colors cursor-pointer">
+        <Link
+          href="/articles"
+          className="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white text-sm sm:text-base md:text-lg rounded-md hover:bg-gray-800 transition-colors cursor-pointer"
+        >
           See all articles
-        </button>
+        </Link>
       </div>
     </main>
   );
